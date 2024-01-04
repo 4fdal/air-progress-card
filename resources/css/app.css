@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.acp-text-primary {
+    background: var(
+        --Linear,
+        linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.acp-btn-primary {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 4px;
+    background: var(
+        --Linear,
+        linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%)
+    );
+    color: #fff;
+}
+
+.acp-bg-primary {
+    background: linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%);
+}
+
+.nav-item-active {
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%);
+}
+
+.nav-item-active > a {
+    padding: 1rem 1rem;
+    margin-inline: 1rem;
+    background: var(
+        --Linear,
+        linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-item > a {
+    color: #b9b9b9;
+    padding: 1rem 1rem;
+    margin-inline: 1rem;
+}
+
+/* .nav-item > a:hover {
+    background: transparent;
+} */
+
+.nav-item > a:checked {
+    background: transparent;
+}
+
+.section {
+    margin-block: 10px;
+    margin-inline: 0px;
+    padding-inline: 0px;
+}
