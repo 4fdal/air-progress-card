@@ -1,6 +1,15 @@
 import React from "react";
 import Line3 from "@/Assets/line3.svg";
-import { MdOutlineAccountCircle } from "react-icons/md";
+import {
+    LuCalendar,
+    LuKeyRound,
+    LuKeySquare,
+    LuMail,
+    LuPhone,
+    LuUserCircle,
+    LuUserSquare2,
+} from "react-icons/lu";
+import ACPInputText from "@/Components/ACPInputText";
 
 export default function CreateAccount() {
     return (
@@ -35,18 +44,44 @@ export default function CreateAccount() {
                             Account
                         </h1>
                     </div>
-                    <div className="flex-1 mt-[10px]">
-                        <label class="form-control">
-                            <div class="label">
-                                <span class="label-text">Name</span>
-                            </div>
-                            <input
-                                type="text"
-                                placeholder="Input Your Full Name"
-                                class="input input-bordered w-full "
-                            />
-                            <MdOutlineAccountCircle className="w-[24px] h-[24px] absolute" />
-                        </label>
+                    <div className="flex-1 flex flex-col mt-[10px]">
+                        <ACPInputText
+                            icon={LuUserCircle}
+                            label="Name"
+                            placeholder="Input Your Full Name"
+                        />
+                        <ACPInputText
+                            icon={LuCalendar}
+                            label="Birth Day"
+                            placeholder="Input Your Birth Day"
+                        />
+                        <ACPInputText
+                            icon={LuPhone}
+                            label="Phone"
+                            placeholder="Input Your Phone Number"
+                        />
+                        <ACPInputText
+                            icon={LuMail}
+                            label="Email"
+                            type="email"
+                            placeholder="Input Your Email"
+                        />
+                        <ACPInputText
+                            icon={LuUserSquare2}
+                            label="Username"
+                            placeholder="Input Your Username"
+                        />
+                        <ACPInputText
+                            icon={LuKeySquare}
+                            label="Password"
+                            type="password"
+                            placeholder="Input Your Password"
+                        />
+                        <button className="acp-bg-primary  p-[10px] gap-[10px] rounded-md">
+                            <span className="text-white font-[18px] font-[600] leading-normal">
+                                Get Started
+                            </span>
+                        </button>
                     </div>
                 </div>
             </div>

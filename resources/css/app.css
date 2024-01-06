@@ -12,6 +12,12 @@
     -webkit-text-fill-color: transparent;
 }
 
+.acp-border-primary {
+    border-image-source: linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%);
+    border-image-slice: 1;
+    border-width: 1px;
+}
+
 .acp-btn-primary {
     display: flex;
     padding: 10px;
@@ -24,6 +30,10 @@
         linear-gradient(120deg, #6936f5 4.64%, #68dbe0 80.66%)
     );
     color: #fff;
+}
+
+.acp-bg-service {
+    background: linear-gradient(180deg, #68dbe0 0%, #32d4db 100%);
 }
 
 .acp-bg-primary {

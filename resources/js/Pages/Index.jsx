@@ -6,6 +6,7 @@ import EllipseBg from "@/Assets/ellipse1.svg";
 import Ellipse2Bg from "@/Assets/ellipse2.svg";
 import Line1 from "@/Assets/line1.svg";
 import Line2 from "@/Assets/line2.svg";
+import { Link } from "@inertiajs/react";
 
 export default function RootIndexPage({}) {
     return (
@@ -47,7 +48,7 @@ export default function RootIndexPage({}) {
                     <div className="flex">
                         <div className="flex-col mt-20">
                             <div>
-                                <button className="btn btn-primary rounded-full">
+                                <button className="btn acp-bg-primary text-white rounded-full">
                                     20% Discount For 1 Month Account
                                 </button>
                             </div>
@@ -75,9 +76,11 @@ export default function RootIndexPage({}) {
                                 We Harness the Augmented Reality to grow your
                                 business and your client
                             </p>
-                            <button className="btn btn-primary mt-[25px]">
-                                Get Started
-                            </button>
+                            <Link href={route("account.register.index")}>
+                                <button className="btn text-white mt-[25px] px-10 acp-bg-primary">
+                                    Get Started
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -104,9 +107,13 @@ export default function RootIndexPage({}) {
                             <p className="text-white font-[400] leading-normal text-[18px]">
                                 Make Your Card and Learn Back Enjoyingg !!
                             </p>
-                            <button className="btn btn-primary border-none bg-white mt-[25px]">
-                                <span className="acp-text-primary" >Get Started</span>
-                            </button>
+                            <Link href={route("account.register.index")}>
+                                <button className="btn  border-none bg-white mt-[25px]">
+                                    <span className="acp-text-primary">
+                                        Get Started
+                                    </span>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className="relative mt-[95px] w-[1244px]">
