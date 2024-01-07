@@ -47,6 +47,8 @@ class IdentityCardController extends Controller
             
             DB::commit();
 
+            toast("success", "Success store your identity card, next please select a service!");
+
             return redirect()->route('account.payment.create');
 
         } catch (\Throwable $th) {

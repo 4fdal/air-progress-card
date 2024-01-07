@@ -9,11 +9,13 @@ use Inertia\Inertia;
 
 class AccountController extends Controller
 {
-    public function registerIndex(){
-         return Inertia::render('CreateAccount/Register');
+    public function registerIndex()
+    {
+        return Inertia::render('CreateAccount/Register');
     }
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
         $request->validate([
             'name' => ['required', 'string'],
             'birth_day' => ['required', 'date_format:Y-m-d'],
@@ -28,9 +30,8 @@ class AccountController extends Controller
 
         Auth::login($user);
 
+        toast("success", "Success create account, next please insert your card identity");
+
         return redirect()->route('account.identity-card.create');
     }
-    
-
-    
 }

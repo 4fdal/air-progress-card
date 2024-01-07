@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 class LandingController extends Controller
 {
-    public function index(){
+    public function index()
+    {
+
+
         return Inertia::render('Index');
     }
 }

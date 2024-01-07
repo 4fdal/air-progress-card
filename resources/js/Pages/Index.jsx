@@ -7,10 +7,11 @@ import Ellipse2Bg from "@/Assets/ellipse2.svg";
 import Line1 from "@/Assets/line1.svg";
 import Line2 from "@/Assets/line2.svg";
 import { Link } from "@inertiajs/react";
+import AppLayout from "@/Layouts/AppLayout";
 
 export default function RootIndexPage({}) {
     return (
-        <>
+        <AppLayout>
             <nav className="navbar flex mt-[32px]">
                 <div className="ml-[100px] flex-initial">
                     <img src={LogoImg} className="w-[85px]" />
@@ -268,6 +269,6 @@ export default function RootIndexPage({}) {
                     </div>
                 </div>
             </div> */}
-        </>
+        </AppLayout>
     );
 }
