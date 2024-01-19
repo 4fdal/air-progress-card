@@ -48,11 +48,11 @@ export default function RootIndexPage({}) {
                     </div>
                     <div className="flex">
                         <div className="flex-col mt-20">
-                            <div>
+                            {/* <div>
                                 <button className="btn acp-bg-primary text-white rounded-full">
                                     20% Discount For 1 Month Account
                                 </button>
-                            </div>
+                            </div> */}
                             <h1 className="lg:text-[70px] acp-text-primary font-[600] lg:w-[700px] text-bold">
                                 New Vision Augmented Reality
                             </h1>

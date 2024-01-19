@@ -10,11 +10,14 @@ use Inertia\Inertia;
 
 class IdentityCardController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         return Inertia::render('CreateAccount/IdentityCard');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+
         $request->validate([
             'photo' => ['required', 'file'],
             'video' => ['required', 'file'],
@@ -27,15 +30,17 @@ class IdentityCardController extends Controller
         try {
 
             $user = Auth::user();
+
             
+
             $data_create = [
                 'user_id' => $user->id,
                 'photo_path' => json_encode([
-                    'path' =>$request->file('photo')->store("identity_card/photo/{$user->id}"),
+                    'path' => $request->file('photo')->store("identity_card/photo/{$user->id}"),
                     'original_name' => $request->file('photo')->getClientOriginalName(),
                 ]),
                 'video_path' => json_encode([
-                    'path' =>$request->file('video')->store("identity_card/video/{$user->id}"),
+                    'path' => $request->file('video')->store("identity_card/video/{$user->id}"),
                     'original_name' => $request->file('video')->getClientOriginalName(),
                 ]),
                 'links' => json_encode($request->links),
@@ -44,13 +49,12 @@ class IdentityCardController extends Controller
             ];
 
             IdentityCard::create($data_create);
-            
+
             DB::commit();
 
-            toast("success", "Success store your identity card, next please select a service!");
+            toast("info", "Success store your identity card, next please select a service!");
 
             return redirect()->route('account.payment.create');
-
         } catch (\Throwable $th) {
             DB::rollBack();
             throw $th;

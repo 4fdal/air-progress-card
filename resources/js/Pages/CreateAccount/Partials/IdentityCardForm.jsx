@@ -60,7 +60,7 @@ export default function IdentityCardForm() {
                 onChange={(values) => setData("links", values)}
                 error={errors.links}
             />
-            <ACPInputSelect
+            {/* <ACPInputSelect
                 icon={CiSignpostR1}
                 label="Specialization"
                 placeholder="Specialization"
@@ -84,6 +84,15 @@ export default function IdentityCardForm() {
                 ]}
                 onChange={(e) => setData("specialization", e.target.value)}
                 error={errors.specialization}
+            /> */}
+            <ACPInputText
+                icon={CiSignpostR1}
+                label="Specialization"
+                placeholder="Specialization"
+                name="specialization"
+                value={data.specialization}
+                onChange={(e) => setData("specialization", e.target.value)}
+                error={errors.specialization}
             />
 
             <ACPInputTextGroup
@@ -105,14 +114,14 @@ export default function IdentityCardForm() {
 
             <div className="flex flex-row space-x-5">
                 <div className="flex-1">
-                    <button className="acp-bg-primary w-full p-[10px] gap-[10px]  ">
+                    <button className="btn border-none acp-bg-primary w-full p-[10px] gap-[10px]  ">
                         <span className="text-white font-[18px] font-[600] leading-normal">
                             Save
                         </span>
                     </button>
                 </div>
                 <div className="flex-1">
-                    <button className=" w-full p-[10px] gap-[10px]  rounded-[20px] acp-border-primary">
+                    <button className="btn border-none w-full p-[10px] gap-[10px]  rounded-[20px] acp-border-primary">
                         <span className="text-white font-[18px] font-[600] acp-text-primary leading-normal">
                             Next
                         </span>

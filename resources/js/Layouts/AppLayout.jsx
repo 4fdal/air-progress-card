@@ -13,16 +13,22 @@ export function Toast() {
     };
 
     React.useEffect(() => {
+        console.log(message);
+
         setTimeout(() => {
             setMessage(null);
         }, 5000);
-    });
+    }, []);
 
     return (
         message && (
             <div className="toast toast-top toast-end z-[50]">
-                <div className={`alert alert-${message.type} `}>
-                    <div className="flex flex-row ">
+                <div
+                    className={`alert ${
+                        message.type ? "alert-" + message.type : "alert-info"
+                    }`}
+                >
+                    <div className="flex flex-row space-x-2 items-center ">
                         {icon[message.type]}
                         <span className="text-white">{message.message}</span>
                     </div>
