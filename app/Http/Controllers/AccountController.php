@@ -18,11 +18,11 @@ class AccountController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string'],
-            'birth_day' => ['required', 'date_format:Y-m-d'],
+            // 'birth_day' => ['nullable', 'date_format:Y-m-d'],
             'phone' => ['required', 'string'],
             'email' => ['required', 'email', 'unique:users,email'],
             'username' => ['required', 'string', 'unique:users,username'],
-            'password' => ['required', 'max:6']
+            'password' => ['required', 'min:6']
         ]);
 
 
@@ -30,7 +30,7 @@ class AccountController extends Controller
 
         Auth::login($user);
 
-        toast("success", "Success create account, next please insert your card identity");
+        toast("info", "Success create account, next please insert your card identity");
 
         return redirect()->route('account.identity-card.create');
     }

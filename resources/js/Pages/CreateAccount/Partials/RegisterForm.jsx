@@ -21,7 +21,7 @@ export default function Step1Form() {
         recentlySuccessful,
     } = useForm({
         name: "",
-        birth_day: "",
+        // birth_day: "",
         phone: "",
         email: "",
         username: "",
@@ -44,7 +44,7 @@ export default function Step1Form() {
                 onChange={(e) => setData("name", e.target.value)}
                 error={errors.name}
             />
-            <ACPInputText
+            {/* <ACPInputText
                 icon={LuCalendar}
                 label="Birth Day"
                 placeholder="Input Your Birth Day"
@@ -53,7 +53,7 @@ export default function Step1Form() {
                 onChange={(e) => setData("birth_day", e.target.value)}
                 error={errors.birth_day}
                 type="date"
-            />
+            /> */}
             <ACPInputText
                 icon={LuPhone}
                 label="Phone"
